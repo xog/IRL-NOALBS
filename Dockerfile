@@ -7,9 +7,9 @@ RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt dist-upgrade -y
 RUN apt install git -y
 RUN apt install nodejs npm --no-install-recommends -y
-RUN mkdir /opt/noalbs
-WORKDIR /opt/noalbs
+RUN mkdir /opt/NOALBS
+WORKDIR /opt/NOALBS
 RUN git clone https://github.com/715209/nginx-obs-automatic-low-bitrate-switching.git .
 RUN npm install --production
-RUN rm /opt/noalbs/config.json
+RUN rm /opt/NOALBS/config.json
 CMD ["npm", "start"]
